@@ -30,3 +30,5 @@ All modules loaded successfully.
 Unloading net6501 kernel modules...
 All modules unloaded successfully.
 ```
+
+Modules have only been tested under CentOS 7 kernels (3.10.x), but will probably work fine under most modern kernels.
