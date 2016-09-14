@@ -28,14 +28,18 @@ default:
 endif
 
 load:
+	@echo "Loading net6501 kernel modules..." &&\
 	/sbin/insmod ./soekris-net6501.ko &&\
 	/sbin/insmod ./leds-net6501.ko &&\
-	/sbin/insmod ./gpio-ioport.ko
+	/sbin/insmod ./gpio-ioport.ko &&\
+	echo "All modules loaded successfully."
 
 unload:
+	@echo "Unloading net6501 kernel modules..." &&\
 	/sbin/rmmod gpio-ioport &&\
 	/sbin/rmmod leds-net6501 &&\
-	/sbin/rmmod soekris-net6501
+	/sbin/rmmod soekris-net6501 &&\
+	echo "All modules unloaded successfully."
 
 clean:
 	rm -rf *.o *~ core .depend .*.cmd *.ko *.mod.c .tmp_versions Module.symvers modules.order
